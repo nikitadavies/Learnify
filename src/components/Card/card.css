@@ -1,0 +1,23 @@
+.card-container {
+    display: flex;
+    justify-content: space-between; /* Adjusts spacing between cards */
+}
+
+.card {
+    width: 200px; /* Adjust size as needed */
+    height: 200px; /* Adjust size as needed */
+    border: 2px solid #392c44; /* Border color */
+    border-radius: 10px; /* Optional for rounded corners */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    cursor: pointer; /* Changes cursor on hover */
+}
+
+.card-icon {
+    font-size: 30px; /* Adjust icon size as needed */
+    color: #392c44; /* Icon color */
+}
+
+/* If you are using Font Awesome, include it in your project */

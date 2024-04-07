@@ -1,0 +1,85 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff;
+    margin: 10px;
+    border-radius: 10px;
+  }
+  
+  .title {
+    margin: 0;
+  }
+  
+  .edit-button {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color:#392c44;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-right: 10px;
+  }
+
+  .upload-button {
+    display: flex;
+    align-items: center;
+    background-color:#392c44;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  
+  .edit-button i {
+    margin-right: 5px;
+  }
+  
+  .card {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 80%;
+    justify-content: space-around;
+  }
+  
+
+  .assignment-card {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 80%;
+    justify-content: space-around;
+  }
+  .field-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .field {
+    margin: 10px;
+  }
+  
+  .field-name {
+    color: #8B8D9D;
+    text-align: left;
+    font-size: 16px
+  }
+  
+  .field-data {
+    margin-top: 5px;
+    text-align: left;
+    font-size: 16px;
+    color: #434552;
+  }
+  
