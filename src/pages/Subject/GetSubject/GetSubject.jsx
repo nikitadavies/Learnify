@@ -8,23 +8,32 @@ const subjectsData = {
 
 function GetSubject() {
     const [subjects, setSubjects] = useState();
+    const [isLoading, setIsLoading] = useState(false);
 
     async function fetchData() {
+        setIsLoading(true);
         const response = await api.subject.getSubjects();
         console.log(response);
         if(response){
             setSubjects(response?.subjects);
         }
+        setIsLoading(false);
         
       }
       useEffect(() => {
-        console.log("hello");
         fetchData();
       }, []);
 
+      if (isLoading) {
+        return <div>Loading...</div>;
+      }
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }}>
+    <>
+     <h1 style={{textAlign: "left", padding: "20px"}}>
+        Subjects
+    </h1>
+     <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }}>
       {subjects?.map(subject => (
         <div key={subject?.subject_id} style={{ border: '1px solid #392c44', borderRadius: '8px', margin: '10px', padding: '10px', width: '250px', height: '250px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', backgroundColor: '#fff' }}>
           <h3>{subject?.subject_name}</h3>
@@ -34,6 +43,7 @@ function GetSubject() {
         </div>
       ))}
     </div>
+    </>
   );
 }
 

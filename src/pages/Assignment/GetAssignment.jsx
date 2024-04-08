@@ -7,6 +7,7 @@ function GetAssignment() {
     const navigate = useNavigate();
     const storedUserData = localStorage.getItem('responseData');
     const userData = JSON.parse(storedUserData);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleNavigate = (assignmentId, subject) => {
       navigate(`/${userData?.role}/assignments/${assignmentId}`, {
@@ -15,6 +16,7 @@ function GetAssignment() {
   };
 
     async function fetchData() {
+      setIsLoading(true);
         let assignment = {
             "subject_id": 1,
             "assignment_name": "asd",
@@ -25,17 +27,19 @@ function GetAssignment() {
         };
         // const response = await api.assignment.updateAssignment(assignment);
         const response = await api.assignment.getAssignments();
-        console.log(response.assignments);
         if(response){
           setAssignments((response?.assignments));
         }
+        setIsLoading(false);
         
       }
       useEffect(() => {
         console.log("hello");
         fetchData();
       }, []);
-
+      if (isLoading) {
+        return <div>Loading...</div>;
+      }
   return (
     <>
     <h1 style={{textAlign: "left", padding: "20px"}}>

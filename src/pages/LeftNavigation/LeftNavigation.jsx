@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { FaUsers } from 'react-icons/fa'; 
 import './LeftNavigation.css';
 
 function LeftNavigation() {
@@ -15,19 +14,19 @@ function LeftNavigation() {
   <div className="navigation">
   <NavLink to="/instructor/subjects" isActive={(match, location) => {
     return match || location.pathname === "/";
-  }}>
-    <div className={`navigation-item ${window.location.pathname === '/employees' ? 'selected' : 'navigation-item'}`}>
+  }} style={{textDecoration: 'none'}}>
+    <div className={`navigation-item`}>
       <span className="navigation-title">Subjects</span>
     </div>
   </NavLink>
   <NavLink to="/instructor/assignments" isActive={(match, location) => {
     return match;
-  }}>
-    <div className={`navigation-item ${window.location.pathname === '/leave' ? 'selected' : 'navigation-item'}`}>
+  }} style={{textDecoration: 'none'}}>
+    <div className={`navigation-item`}>
       <span className="navigation-title">Assignments</span>
     </div>
   </NavLink>
-  <NavLink to="/" onClick={handleLogout} style={{marginTop: 'auto'}}>
+  <NavLink to="/" onClick={handleLogout} style={{marginTop: 'auto', marginBottom: '30%'}}>
     <div>
       <span className="navigation-title">Logout</span>
     </div>

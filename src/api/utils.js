@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://ju867cld81.execute-api.us-east-1.amazonaws.com/dev';
+const API_BASE_URL = 'https://0p80ns0e0g.execute-api.us-east-1.amazonaws.com/dev';
 
 const api = axios.create({
   baseURL: API_BASE_URL,

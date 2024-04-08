@@ -28,6 +28,7 @@ const GetAssignmentById = () =>{
       "submission_date": assignment.assignment?.submission_date,
       "marks": assignment.assignment?.marks
   };
+    console.log(deleteAssignment);
     const response = await api.assignment.deleteAssignment(deleteAssignment);
         if(response){
          navigate('/instructor/assignments')

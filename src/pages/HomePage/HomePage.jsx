@@ -45,7 +45,7 @@ function HomePage() {
           <h2 style={{ color: "#392c44" }}>Empower Growth, Enhance Learning</h2>
           <div style={{ marginTop: "25px" }}>
             <p>
-              Have an account? <a onClick={() => {setIsLoginClicked(true)}}>Login</a>
+              Have an account? <a style={{ color: "#392c44", fontWeight: 'bold' }} onClick={() => {setIsLoginClicked(true)}}>Login</a>
             </p>
           </div>
         </div>) : (
