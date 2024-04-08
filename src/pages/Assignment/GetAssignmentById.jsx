@@ -18,17 +18,16 @@ const GetAssignmentById = () =>{
       state: assignment 
     });
   };
-
+  
   const handleDeleteClick = async() => {
     let deleteAssignment = {
-      "subject_id": assignment.assignment?.subject_id,
+      "subject_id": assignment?.assignment?.subject_id,
       "assignment_name": assignment?.assignment?.assignment_name,
       "assignment_description": assignment.assignment?.assignment_description,
-      "assignment_id": assignment.assignment?.assignment_id,
-      "submission_date": assignment.assignment?.submission_date,
+      "assignment_id": assignment?.assignment?.assignment_id,
+      "submission_date": assignment?.assignment?.submission_date,
       "marks": assignment.assignment?.marks
   };
-    console.log(deleteAssignment);
     const response = await api.assignment.deleteAssignment(deleteAssignment);
         if(response){
          navigate('/instructor/assignments')
@@ -50,12 +49,13 @@ const GetAssignmentById = () =>{
             const fileContent = reader.result.split(',')[1]; // Base64 encoded content
             let uploadassignment = {
               student_name: userData?.user_name,
-              subject_id: assignment.subject_id,
-              assignment_id: assignment.assignment_id,
+              subject_id: assignment?.assignment?.subject_id,
+              assignment_id: assignment?.assignment?.assignment_id,
               fileName: file.name,
               fileType: file.type,
               fileContent
           }
+          console.log(uploadassignment);
             try {
                 const response = await api.assignment.uploadAssignment(uploadassignment);
                 toast.success('Assignment Submitted Successfully!!');

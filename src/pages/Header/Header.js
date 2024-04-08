@@ -1,8 +1,10 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 import { CapLogo } from '../../assets';
 import './Header.css';
 
 function Header() {
+  const navigate = useNavigate();
   return (
     <header style={{ display: 'flex', alignItems: 'center' }}>
      <div className="logo">
@@ -17,7 +19,7 @@ function Header() {
           }}
         />
       </div>
-      <h2 style={{ marginLeft: "10px"}}>Learnify</h2>
+      <h2 style={{ marginLeft: "10px"}} onClick={() => navigate('/instructor')}>Learnify</h2>
     </header>
   );
 }

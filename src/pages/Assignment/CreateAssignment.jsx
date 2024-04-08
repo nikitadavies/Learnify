@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../api";
+import { toast } from 'react-toastify';
 
 const CreateAssignment = () => {
   const [assignmentName, setAssignmentName] = useState("");
@@ -21,7 +22,13 @@ const CreateAssignment = () => {
         "submission_date": submissionDate,
         "marks": parseInt(credits)
     };
+    let assignmentNotification = {
+        "message": `A New assignment ${assignmentName} Has been created for you for subject ${parseInt(subjectCode)} !!`,
+        "subject": `Assignment ${assignmentName} Added`
+    };
     api.assignment.createAssignment(assignment).then(() => {
+        toast.success('Assignment created successfully!!');
+        api.subject.createSubjectNotification(assignmentNotification);
         navigate("/instructor");
     }); 
   };
